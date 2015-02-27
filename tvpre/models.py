@@ -16,3 +16,7 @@ class Greeting(ndb.Model):
     author = ndb.UserProperty()
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
+
+class UserDict(ndb.Model):
+    user_id = ndb.StringProperty()
+    string_dict = ndb.JsonProperty()
