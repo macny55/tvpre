@@ -18,4 +18,8 @@ def top_page(request):
     return HttpResponse(html)
 
 def nhk_program(request):
-    pass
+    service = ['g1']
+    client = ProgramList(user_id = 'macny55')
+    content = Context({'pg_list' : client.recommend_pg_list('130',service)})
+    return HttpResponse(loader.get_template('program.html').render(content))
+
