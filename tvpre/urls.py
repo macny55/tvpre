@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
-from tvpre.views import main_page, sign_post
+from tvpre.views import main_page
 
 urlpatterns = patterns('',
-    (r'^sign/$', sign_post),
     (r'^$', main_page),
 )
