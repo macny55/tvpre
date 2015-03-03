@@ -3,10 +3,8 @@ import json,urllib2,urllib
 import datetime
 import contextlib
 from BeautifulSoup import BeautifulSoup
+# KEYとURLはsettings.pyにある
 from settings import *
-
-# API_KEYはsettings.pyに保存する
-# API_KEY = 'cNgD49ibBqeonTI0akm5GlmfbZaAGRKa'
 
 class ProgramList(object):
     def __init__(self,user_id=None):
