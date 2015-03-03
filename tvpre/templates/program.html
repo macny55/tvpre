@@ -1,0 +1,15 @@
+<html>
+  <head></head>
+  <body>    
+  {% for pg in pg_list %}
+    <form action="/programs/" method="post">
+      <div id="tv_program">
+        <b>{{ pg.title }}</b>
+        <p>{{ pg.sub_title }}</p>
+        <p>{{ pg.start_time }} ～ {{ pg.end_time }}</p>
+        <div><input type="submit" value="気になる！"></div>
+      </div>
+    </form>
+  {% endfor %}
+  </body>
+</html>
