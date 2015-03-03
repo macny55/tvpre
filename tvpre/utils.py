@@ -8,7 +8,6 @@ from settings import *
 
 class ProgramList(object):
     def __init__(self,user_id=None):
-        self.api_key = NHK_API_KEY
         self.user_id = user_id
         
     def _search_content(self,response_data,pg_list):
@@ -33,8 +32,8 @@ class ProgramList(object):
         for s in service:
             url_list_today    = [area,s,str(datetime.date.today())]
             url_list_tomorrow = [area,s,str(datetime.date.today() + datetime.timedelta(days=1))]
-            url_today    = NHK_API_URL + '/'.join(url_list_today) + '.json?key=' + self.api_key
-            url_tomorrow = NHK_API_URL + '/'.join(url_list_tomorrow) + '.json?key=' + self.api_key
+            url_today    = NHK_API_URL + '/'.join(url_list_today) + '.json?key=' + NHK_API_KEY
+            url_tomorrow = NHK_API_URL + '/'.join(url_list_tomorrow) + '.json?key=' + NHK_API_KEY
             with contextlib.closing(urllib2.urlopen(url_today)) as r_today:
                 response_today = json.loads(r_today.read())
                 pg_list = self._search_content(response_today['list'][str(s)],pg_list)
