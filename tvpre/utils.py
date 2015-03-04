@@ -42,4 +42,6 @@ class ProgramList(object):
                 pg_list = self._search_content(response_tomorrow['list'][str(s)],pg_list) 
         return sorted(pg_list, key=lambda x:x['score'],reverse=True)
 
+    def make_dict(self,title,sub_title):
+        pass
 
